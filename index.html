@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#101014"/><meta name="description" content="TV TOWER — an interactive archive of images, motion, and stories."/><title>TV TOWER · SHI PIN</title><link rel="icon" type="image/svg+xml" href="./favicon.svg"/></head>
+<body>
+<div id="app">
+  <div id="scene" role="application" aria-label="TV tower: drag to look, scroll to move, click a screen to explore" tabindex="0"></div>
+  <section id="boot" aria-label="CRT startup" hidden>
+    <div class="crt-shell"><div class="crt-screen"><div class="crt-grain"></div>
+      <span class="boot-corner">CH. 00 / TELEVISION SYSTEM</span>
+      <div class="boot-brand"><span class="boot-symbol">≋</span> SHI PIN</div>
+      <p class="boot-subtitle">A Personal Archive<br/>SIGNAL SYSTEM — VOL. 01</p>
+      <div class="boot-progress" role="progressbar" aria-label="Startup progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><i></i></div>
+      <p class="boot-status" role="status">RECEIVING SIGNAL...</p>
+      <button id="boot-enter" disabled>ENTER ARCHIVE ↗</button>
+      <span class="boot-foot">IMAGES · MOTION · WORDS<br/>TUNE INTO ANOTHER FREQUENCY.</span>
+    </div></div>
+  </section>
+  <aside id="tower-editorial" aria-label="About the creative archive">
+    <div class="tower-mark">SHI PIN <span>SHI PIN / ARCHIVE 2026</span></div>
+    <div class="tower-story"><span class="tower-kicker">TRANSMITTING / SELECTED WORKS</span><div id="ripple-type" role="img" aria-label="A collection of images, stories and other signals."></div><p class="tower-description">An independent archive of visual experiments.<br/>Collected in the space between frames.</p><div class="tower-channels"><button data-category="writing">01 / PAPERS ↗</button><button data-category="script">02 / SCRIPTS ↗</button><button data-category="visual">03 / GRAPHIC ↗</button><button data-category="image">04 / VIDEO ↗</button></div></div>
+    <button class="about-window" data-panel="about"><span>ABOUT / RESUME</span><i>↗</i><strong>Meet<br/>Wu Xiting.</strong></button>
+    <span class="tower-caption">23 RECEIVERS / ONE FREQUENCY</span>
+  </aside>
+  <header id="header">
+    <details id="quick-menu"><summary aria-label="Open menu" title="Menu"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg></summary>
+      <nav aria-label="Scene menu"><button data-panel="index">WORK INDEX</button><button data-panel="about">ABOUT</button><button data-panel="album" id="album-button">ALBUM <span id="photo-count">00</span></button><button id="reset">RETURN TO START</button><button id="sound" aria-label="Enable sound" aria-pressed="false">SOUND <span id="sound-state">OFF</span></button><button data-panel="help">CONTROLS</button></nav>
+    </details>
+  </header>
+  <div id="viewfinder" hidden aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+  <div id="explore-bottom" hidden>
+    <div class="walk-controls"><button id="walk-back" aria-label="Move backward" title="Back"><svg viewBox="0 0 24 24"><path d="m14 6-6 6 6 6"/></svg></button><button id="walk-forward" aria-label="Move forward" title="Forward"><svg viewBox="0 0 24 24"><path d="m10 6 6 6-6 6"/></svg></button></div>
+    <div class="controls"><button id="shutter" aria-label="Take photo" title="Photo · Space"><svg viewBox="0 0 24 24"><path d="M8 6 9.5 4h5L16 6h4v14H4V6z"/><circle cx="12" cy="12.5" r="3.5"/></svg></button></div>
+  </div>
+  <section id="loader" aria-label="Loading scene"><span class="loader-mark">TV<span>·</span></span><p class="eyebrow">SEARCHING FOR A SIGNAL</p><div class="load-track"><i id="load-fill"></i></div><div class="load-info"><span id="load-text">Receiving tower signal...</span><span id="load-number">0%</span></div><button id="retry" hidden>RECONNECT ↻</button><button id="fallback" hidden>BROWSE WORKS →</button></section>
+  <div id="transition" aria-hidden="true"><canvas></canvas><span>CONNECTING TO ANOTHER FREQUENCY</span></div><div id="flash" aria-hidden="true"></div><div id="toast" role="status"></div>
+  <dialog id="panel" aria-labelledby="panel-title"><div class="panel-top"><span class="eyebrow" id="panel-kicker">THE ARCHIVE</span><button id="close-panel" aria-label="Close panel">CLOSE <span>×</span></button></div><div id="panel-content"></div></dialog>
+</div>
+<noscript>This interactive portfolio requires JavaScript.</noscript><script type="module" src="/src/main.js"></script>
+</body></html>
