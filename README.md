@@ -3,7 +3,7 @@
 基于真实电视塔 GLB 的交互式作品集原型。Vite + Three.js + GSAP，无后端。
 
 > 在线演示：https://61340197ab2a43758aa51e7e6a9af9d6.app.workbuddy.host
-> 面向评审的项目导读见 [PORTFOLIO.md](PORTFOLIO.md)；素材来源与授权见 [ASSET_SOURCES.md](ASSET_SOURCES.md)。
+> 面向评审的项目导读见  [ASSET_SOURCES.md](ASSET_SOURCES.md)。
 
 ## 本地运行
 
