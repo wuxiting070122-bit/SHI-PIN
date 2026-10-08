@@ -1,0 +1,30 @@
+{
+  "modified_bodies": [
+    "TV_01_Body",
+    "TV_02_Body",
+    "TV_03_Body",
+    "TV_04_Body",
+    "TV_05_Body",
+    "TV_06_Body",
+    "TV_07_Body",
+    "TV_08_Body",
+    "TV_09_Body",
+    "TV_10_Body",
+    "TV_11_Body",
+    "TV_12_Body",
+    "TV_13_Body",
+    "TV_14_Body",
+    "TV_15_Body",
+    "TV_16_Body",
+    "TV_17_Body",
+    "TV_18_Body",
+    "TV_19_Body",
+    "TV_20_Body",
+    "TV_21_Body",
+    "TV_22_Body",
+    "TV_23_Body"
+  ],
+  "shells_replaced": 46,
+  "object_transforms_unchanged": true,
+  "screens_geometry_unchanged": true
+}
