@@ -1,0 +1,119 @@
+.interaction-guide {
+  position: absolute;
+  right: 28px;
+  bottom: 26px;
+  z-index: 6;
+  max-width: 310px;
+  padding: 12px 16px;
+  border-left: 2px solid #365da5;
+  background: rgba(245,248,252,.92);
+  color: #223e70;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: left;
+  pointer-events: none;
+}
+.interaction-guide strong { display: block; font: inherit; font-weight: 700; letter-spacing: .1em; margin-bottom: 8px; }
+.interaction-guide p { margin: 5px 0 0; font: inherit; }
+.interaction-guide p span { display: block; font-weight: 700; font-size: 10px; letter-spacing: .035em; }
+.interaction-guide[data-scene="tower"] { left: 5%; right: auto; bottom: 10%; }
+.interaction-guide[data-scene="record"] { left: 4%; right: auto; bottom: 16%; opacity: var(--detail-opacity,1); }
+.interaction-guide[data-scene="film"] { left: 4%; right: auto; top: 90px; bottom: auto; }
+.interaction-guide[data-scene="train"] { right: 3%; bottom: 6%; }
+.letter-gesture,.record-browse-hint,.film-stock { display: none; }
+@media (max-width: 650px) {
+  .interaction-guide { font-size: 10px; padding: 8px 10px; right: 12px; bottom: 12px; max-width: 245px; }
+  .interaction-guide strong { margin-bottom: 3px; font-size: 10px; }
+  .interaction-guide p { margin-top: 3px; }
+  .interaction-guide p span { font-size: 9px; }
+  .interaction-guide[data-scene="tower"] { left: 14px; bottom: 82px; }
+  .interaction-guide[data-scene="record"] { left: 12px; bottom: auto; top: 65px; }
+  .interaction-guide[data-scene="film"] { top: auto; bottom: 85px; left: 12px; }
+  .interaction-guide[data-scene="letters"] { bottom: 12px; }
+  .interaction-guide[data-scene="train"] { bottom: 40px; }
+}
+/* Keep the tower's bottom-row screens completely visible. */
+.interaction-guide[data-scene="tower"] { top: 120px; bottom: auto; }
+@media(max-width:650px) {
+  .interaction-guide[data-scene="tower"] { top: auto; bottom: 82px; }
+}
+.interaction-guide[data-scene="record"] { left: auto; right: 4%; }
+.letter-space[data-zoom="near"] .interaction-guide { left: 24px; right: auto; }
+@media(max-width:650px) {
+  .interaction-guide[data-scene="record"] { top: 65px; left: 12px; right: auto; }
+  .letter-space[data-zoom="near"] .interaction-guide { left: 12px; }
+}
+
+/* Transparent terminal ink, matching the editorial title rather than a card. */
+.interaction-guide {
+  width: 285px;
+  max-width: 285px;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: #152b65;
+}
+.interaction-guide-ink { width: 100%; aspect-ratio: 480 / 368; }
+.interaction-guide[data-scene="letters"] .interaction-guide-ink { aspect-ratio: 480 / 464; }
+.interaction-guide-ink canvas { display: block; width: 100%; height: 100%; }
+.interaction-guide.has-ripple > strong,
+.interaction-guide.has-ripple > p {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.interaction-guide[data-scene="tower"] { width: 225px; }
+@media(max-width:650px) {
+  .interaction-guide { width: 230px; max-width: 230px; padding: 0; }
+  .interaction-guide[data-scene="tower"] { width: 215px; }
+}
+
+/* Reserve a header area for the train instructions, clear of the window and luggage. */
+.train-space .interaction-guide[data-scene="train"] {
+  top: 90px;
+  bottom: auto;
+  left: 17%;
+  right: auto;
+  width: min(360px, 75%);
+  max-width: none;
+}
+.interaction-guide[data-scene="train"] .interaction-guide-ink { aspect-ratio: 480 / 144; }
+.train-space .train-window { top: max(210px, 27%); height: calc(70% - max(210px, 27%)); }
+@media(max-width:650px) {
+  .train-space .interaction-guide[data-scene="train"] { left: 6%; top: 100px; width: min(330px, 88%); }
+  .train-space .train-window { top: max(210px, 29%); height: calc(70% - max(210px, 29%)); }
+}
+@media(max-height:600px) and (min-width:651px) {
+  .train-space .interaction-guide[data-scene="train"] { top: 16px; left: auto; right: 6%; width: 300px; }
+  .train-space .train-window { top: 125px; height: calc(70% - 125px); }
+}
+.train-space .train-work { overflow-y: auto; }
+@media(max-width:900px) {
+  .train-space .train-work { padding: 16px 20px; }
+  .train-space .train-work h1 { margin: 12px 0; font-size: 24px; }
+  .train-space .train-work p { font-size: 13px; line-height: 1.65; }
+}
+
+/* Keep video hints in the text column's flow so controls cannot overlap them. */
+.record-notes .interaction-guide[data-scene="record"] {
+  position: relative;
+  inset: auto;
+  flex: 0 0 auto;
+  width: min(100%, 320px);
+  max-width: 100%;
+  margin-top: 12px;
+  opacity: 1;
+}
+.record-notes .interaction-guide-ink { aspect-ratio: 480 / 144; }
+.record-notes { overflow-y: auto; }
+.record-notes > * { flex-shrink: 0; }
+.record-notes .record-lyrics { flex: 1 0 100px; }
+@media(max-width:650px) {
+  .record-notes .interaction-guide[data-scene="record"] { width: min(100%, 280px); margin-top: 8px; }
+  .record-notes .record-toggle { position: static; }
+}
